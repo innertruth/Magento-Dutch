@@ -1,0 +1,59 @@
+<!--@subject Welkom {{var customer.firstname}} @-->
+
+<link href="variables/mail_styles.css" rel="stylesheet" type="text/css" />
+{{customVar code=mail_styles}}
+
+<div>
+    <table class="main-table">
+        <tr>
+            <td>
+                <!-- [ header starts here] -->
+                <table align="center">
+                    <tr>
+                        <td>
+                            <a href="{{store url=""}}"><img class="logo" src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var customer.store.website.name}}"/></a></td>
+                    </tr>
+                </table>
+
+                <!-- [ middle starts here] -->
+                <table align="center">
+                    <tr>
+                        <td valign="top">
+                            <p><strong>Beste {{var customer.firstname}},</strong><br/><br/>
+                            Dank u voor uw aanmelding bij onze webshop. Om uw gegevens te bekijken kunt u altijd inloggen op <a href="{{store url="customer/account/"}}">uw account</a> met uw e-mailadres en wachtwoord. Nadat u bent ingelogd kunt u:</p>
+
+                            <ul>
+                                <li>Sneller door de kassa heen bij het afrekenen.</li>
+                                <li>De status van bestellingen bekijken.</li>
+                                <li>Uw eerdere bestelllingen bekijken.</li>
+                                <li>Wijzigingen aanbrengen in uw adresgegevens.</li>
+								<li>U opgeven of afmelden voor onze e-mailnieuwsbrief.</li>
+                                <li>Uw wachtwoord wijzigen.</li>
+                                <li>Verschillende verzendadressen opslaan.</li>
+                            </ul>
+
+                       
+							<p>
+								Met vriendelijke groet,<br/>
+								<strong>{{config path="general/store_information/name"}}</strong><br/><br/>
+								<table>
+									<tr>
+										<td>
+										<strong>{{config path="general/store_information/phone"}}</strong><br/>
+										<a href="{{config path='trans_email/ident_support/email'}}">{{config path='trans_email/ident_support/email'}}</a><br/>
+										<a href="{{config path="web/unsecure/base_url"}}">Bezoek onze webshop</a>
+										</td>
+										<td>
+										<div align="right">{{config path="general/store_information/address"}}</div>
+										</td>
+									</tr>
+								</table>
+							</p>
+							
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

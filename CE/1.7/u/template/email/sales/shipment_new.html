@@ -1,0 +1,91 @@
+<!--@subject {{var order.getStoreGroupName()}}: Verzend # {{var shipment.increment_id}} voor Bestelling # {{var order.increment_id}} @-->
+
+<link href="../variables/mail_styles.css" rel="stylesheet" type="text/css" />{{customVar code=mail_styles}}
+
+<div>
+<table class="main-table" style="margin-bottom: 30px;">
+<tr>
+    <td>
+        <!-- [ header starts here] -->
+        <table align="center">
+            <tr>
+                <td><a href="{{store url=""}}" style="font-family: Arial;font-size: 36px; font-weight:bold; text-decoration:none; color:#000000;">{{var order.getStoreGroupName()}}</a></td>
+            </tr>
+     
+	</table>
+        <!-- [ middle starts here] -->
+        <table align="center">
+            <tr>
+                <td>
+                    <p>
+                        Beste {{var order.getCustomerName()}},<br/><br/>
+                        Hartelijk dank voor uw bestelling bij {{var order.getStoreGroupName()}}. Informatie over uw bestelling kunt u altijd inzien door <a href="{{store url="customer/account/"}}">in te loggen op uw account</a>. Heeft u vragen? Neem dan contact op via <a href="mailto:{{config path='trans_email/ident_support/email'}}">{{config path='trans_email/ident_support/email'}}</a> of telefonisch: <span class="nobr">{{config path='general/store_information/phone'}}.</span>
+						</p>
+              
+              <h3>
+                        Uw verzending #{{var shipment.increment_id}} voor bestelling #{{var order.increment_id}}
+                    </h3><br/>
+                    <table class="order-table">
+                        <thead>
+                        <tr>
+                            <th>Factuuradres:</th>
+                            <th class="separator"></th>
+                            <th>Betaalmethode:</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                {{var order.getBillingAddress().format('html')}}
+                            </td>
+                            <td class="separator">&nbsp;</td>
+                            <td>
+                                {{var payment_html}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table class="order-table" align="center">
+                        <thead>
+                        <tr>
+                            <th>Verzendadres:</th>
+                            <th class="separator"></th>
+                            <th>Verzendmethode:</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                {{var order.getShippingAddress().format('html')}}
+                            </td>
+                            <td class="separator">&nbsp;</td>
+                            <td>
+                                {{var order.getShippingDescription()}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+
+                    {{layout handle="sales_email_order_shipment_items" shipment=$shipment order=$order}}
+
+                    <br/>
+                    {{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}
+
+
+
+<p>
+        Met vriendelijke groet,<br/><br/>
+        <strong>{{config path="general/store_information/name"}}</strong><br/>
+        {{config path="general/store_information/address"}}<br />
+                        <a href="{{config path="web/unsecure/base_url"}}">Bezoek onze webshop</a>
+</p>
+
+                </td>
+          </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</div>

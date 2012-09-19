@@ -1,0 +1,106 @@
+    
+	/* 
+	-- Basis stylesheet voor Magento transactional emails.
+	-- Plak geheel in een custom variable met deze naam: mail_styles
+	-- Plaats binnen style-tags (gecomment in dit bestand)
+	-- Vergeet niet de lokale css-verwijzing te verwijderen (bijv. d.m.v. zoek & vervang)
+			
+	-- Courtesy of WebGenerator | www.webgenerator.nl
+	-- Supplied "as is" - we do not provide support - usage at your own risk
+
+	*/
+	
+	/* <style type="text/css"> */
+	
+	body,td { 
+		color:#444444; 
+		font-size:12px;
+		line-height:20px;
+		font-family:Arial, Helvetica, sans-serif;
+		text-align:left; 
+	}
+	table {
+		border-spacing: 0; 
+		border: 0; 
+		width: 650px;
+	}
+	td {
+		padding: 0; 
+		vertical-align: top; 
+		align: center;
+	}
+    .main-table {
+		width: 100%; 
+		margin-top: 20px; 
+		margin-bottom: 20px; 
+	}
+    .order-table {
+		width: 100%;
+		border-collapse:collapse;
+	}
+    .order-table th { 
+		color:#ffffff; 
+		font-size:14px;
+		font-weight:bold;
+		line-height:20px;
+		font-family:Arial, Helvetica, sans-serif; 
+		text-align: left; 
+		width: 48.5%; 
+		background: #bfbfbf; 
+		padding:5px 9px 6px 9px; 
+		border:1px solid #7f7f7f; 
+		border-bottom:1px solid #7f7f7f; 
+	}
+    .order-table td {
+		padding:7px 9px 9px 9px; 
+		border:1px solid #7f7f7f; 
+		border-top:1px solid #7f7f7f; 
+		background:#f2f2f2;
+	}
+    .order-table .separator {
+		width: 3%; 
+		background: none; 
+		border: none;
+	}
+	.item-table {
+		width: 100%;
+		border-collapse:collapse;
+	}
+    .item-table th { 
+		color:#ffffff; 
+		font-size:14px;
+		font-weight:bold;
+		line-height:20px;
+		font-family:Arial, Helvetica, sans-serif; 
+		text-align: left; 
+		width: 100%; 
+		background: #bfbfbf; 
+		padding:5px 9px 6px 9px; 
+		border:1px solid #7f7f7f; 
+		border-bottom:1px solid #7f7f7f; 
+	}
+    .item-table td {
+		padding:7px 9px 9px 9px; 
+		border:1px solid #7f7f7f; 
+		border-top:1px solid #7f7f7f; 
+		background:#f2f2f2;
+	}
+	a {
+		color: #0066cc;
+		text-decoration: underline;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+    .logo {
+		margin-bottom: 20px; 
+		border: 0;
+	}
+   	h3 {
+		font-size:14px;
+		font-weight:bold;
+		line-height: 12px;
+		margin-bottom: 1px;
+	}
+	
+	/* </style> */

@@ -1,0 +1,58 @@
+<!--@subject Bevestig uw account {{var customer.name}}  @-->
+
+<link href="variables/mail_styles.css" rel="stylesheet" type="text/css" />
+{{customVar code=mail_styles}}
+
+<div>
+    <table class="main-table">
+        <tr>
+            <td>
+                <!-- [ header starts here] -->
+                <table align="center">
+                    <tr>
+                        <td>
+                            <a href="{{store url=""}}"><img class="logo" src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var customer.store.website.name}}"/></a></td>
+                    </tr>
+                </table>
+
+                <!-- [ middle starts here] -->
+                <table align="center">
+                    <tr>
+                        <td valign="top">
+                            <p><strong>Beste {{var customer.firstname}}</strong>,<br/><br/>
+							Dank u voor uw aanmelding bij onze webshop. Uw e-mailadres {{var customer.email}} moet worden bevestigd om op de webshop te kunnen inloggen.</p>
+							
+							
+							 <ul>
+                                <li>Om te bevestigen klikt u <strong><a href="{{store url="customer/account/confirm/" _query_id=$customer.id _query_key=$customer.confirmation _query_back_url=$back_url}}">deze bevestigingslink</a></strong>.</li>
+                            </ul>
+
+                            <p>U wordt direct ingelogd op de website. De link kan maar één keer gebruikt worden.</p>
+							
+							<p>
+								Met vriendelijke groet,<br/>
+								<strong>{{config path="general/store_information/name"}}</strong><br/><br/>
+								<table>
+									<tr>
+										<td>
+										<strong>{{config path="general/store_information/phone"}}</strong><br/>
+										<a href="{{config path='trans_email/ident_support/email'}}">{{config path='trans_email/ident_support/email'}}</a><br/>
+										<a href="{{config path="web/unsecure/base_url"}}">Bezoek onze webshop</a>
+										</td>
+										<td>
+										<div align="right">{{config path="general/store_information/address"}}</div>
+										</td>
+									</tr>
+								</table>
+							</p>
+														
+							
+							<p><i>Heeft u zichzelf niet aangemeld? Dan kunt u deze e-mail gewoon als niet verzonden beschouwen en weggooien.</i></p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</div>

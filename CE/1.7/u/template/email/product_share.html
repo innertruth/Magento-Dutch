@@ -1,0 +1,93 @@
+<!--@subject {{var sender_name}} wil iets met je delen @-->
+<!--This is a comment block
+
+Available vars in this template:
+  - name            Recipient name
+  - email           Recipient Email address
+  - product_name    Product name
+  - product_url     Url for product
+  - product_image   Url for product small image (75 px)
+  - message         Sender custom message
+  - sender_name     Sender name
+  - sender_email    Sender email
+
+Use vars: {{var var_name}}
+
+-->
+
+<link href="variables/mail_styles.css" rel="stylesheet" type="text/css" />
+{{customVar code=mail_styles}}
+
+<div>
+<table class="main-table">
+<tr>
+    <td>
+        <!-- [ header starts here] -->
+        <table align="center">
+            <tr>
+                <td><a href="{{store url=""}}"><img class="logo" src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var order.getStoreGroupName()}}" /></a></td>
+            </tr>
+        </table>
+        <!-- [ middle starts here] -->
+
+
+
+<table align="center">
+            
+        <tbody>
+        <tr>
+            <td>
+			
+				Beste {{var name}},<br /><br />
+<strong>{{var sender_name}}</strong> zag het volgende product in onze webshop en wil u dat via deze e-mail laten weten. U kunt de link volgen voor meer informatie.<br /><br />
+
+<table>
+            <tr>
+                
+				<td>
+				<h3>{{var product_name}}</h3>
+				<strong><a href="{{var product_url}}">Klik hier voor meer informatie</a></strong>
+				</td>
+				<td><img src="{{var product_image}}" /></td>
+            </tr>
+        </table>
+
+
+
+
+<br /><hr/>
+<strong>Bericht van {{var sender_name}}:</strong><br />{{var message}}<br /><hr/><br />
+				
+<p>
+	Met vriendelijke groet,<br/>
+	<strong>{{config path="general/store_information/name"}}</strong><br/><br/>
+	<table>
+		<tr>
+			<td>
+			<strong>{{config path="general/store_information/phone"}}</strong><br/>
+			<a href="{{config path='trans_email/ident_support/email'}}">{{config path='trans_email/ident_support/email'}}</a><br/>
+			<a href="{{config path="web/unsecure/base_url"}}">Bezoek onze webshop</a>
+			</td>
+			<td>
+			<div align="right">{{config path="general/store_information/address"}}</div>
+			</td>
+		</tr>
+	</table>
+</p>
+				
+				
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+        </table>
+		</td>
+</tr>
+</table>
+</div>

@@ -1,0 +1,41 @@
+<!--@subject {{var order.getStoreGroupName()}}: Verzend # {{var shipment.increment_id}} update @-->
+
+<link href="../variables/mail_styles.css" rel="stylesheet" type="text/css" />{{customVar code=mail_styles}}
+
+<div>
+<table class="main-table">
+<tr>
+    <td>
+        <!-- [ header starts here] -->
+       <table align="center">
+        <tr>
+            <td><a href="{{store url=""}}"><img class="logo" src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var order.getStoreGroupName()}}"/></a></td>
+        </tr>
+        </table>
+
+        <!-- [ middle starts here] -->
+        <table align="center">
+        <tr>
+            <td>
+                <p>
+                Beste {{var order.getCustomerName()}},<br/><br/>
+                    Uw bestelling # {{var order.increment_id}} is <strong>{{var order.getStatusLabel()}}</strong>.
+                </p>
+                <p>{{var comment}}</p>
+
+
+
+<p>
+        Met vriendelijke groet,<br/><br/>
+        <strong>{{config path="general/store_information/name"}}</strong><br/>
+        {{config path="general/store_information/address"}}<br />
+                        <a href="{{config path="web/unsecure/base_url"}}">Bezoek onze webshop</a>
+</p>
+
+                </td>
+          </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</div>
